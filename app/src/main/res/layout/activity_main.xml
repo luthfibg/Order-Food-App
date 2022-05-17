@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Pesan2M"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/calm_red"
+            app:layout_scrollFlags="snap|scroll|exitUntilCollapsed"
+            app:title="Pesan 2M"
+            app:collapsedTitleTextColor="@color/white"
+            app:expandedTitleGravity="bottom|start"
+            app:expandedTitleTextColor="@color/thick_butter"
+            app:expandedTitleTextAppearance="@style/Theme.Pesan2M"
+            app:collapsedTitleTextAppearance="@style/Theme.Pesan2M"
+            android:background="@drawable/garden_restaurant_sample">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_shape"
+        android:backgroundTint="@color/heavy_gray"
+        app:layout_anchor="@id/nestedScrollView"
+        app:layout_anchorGravity="center"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="22dp">
+
+            <TextView
+                android:id="@+id/homeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/homeTitle"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                app:layout_constraintTop_toTopOf="@+id/homeTitle">
+
+                <EditText
+                    android:id="@+id/ixAutoDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/dateHint"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:inputType="date"
+                    android:maxLength="100"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="100"
+                app:counterOverflowTextColor="@color/orange"
+                app:counterTextColor="@color/thick_butter"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay1">
+
+                <EditText
+                    android:id="@+id/ixName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:hint="@string/AN"
+                    android:inputType="text"
+                    android:maxLength="100"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay2"
+                app:counterEnabled="false">
+
+                <TextView
+                    android:id="@+id/menu_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menuTitle1"
+                    android:textColor="@color/white"
+                    android:gravity="start|top"
+                    android:layout_gravity="top"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/honey_garlic_chicken"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/contentImage" />
+
+                <LinearLayout
+                    android:id="@+id/linLay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/foodMenu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/food1"
+                        android:textColor="@color/thick_butter"
+                        android:textSize="18sp"
+                        android:buttonTint="@color/calm_red" />
+                    <TextView
+                        android:id="@+id/strFoodPrice1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodPrice1"
+                        android:layout_gravity="end|center"
+                        android:gravity="end"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:max="15"
+                    android:progressDrawable="@drawable/seekbar_ruler"
+                    android:thumb="@drawable/seekbar_slider" />
+                <TextView
+                    android:id="@+id/strSeekBar1"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/seekHint1"
+                    android:textColorHint="@color/white"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/beef_burger"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/contentImage"/>
+
+                <LinearLayout
+                    android:id="@+id/linLay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/foodMenu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/food2"
+                        android:textColor="@color/thick_butter"
+                        android:textSize="18sp"
+                        android:buttonTint="@color/calm_red"/>
+                    <TextView
+                        android:id="@+id/strFoodPrice2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodPrice2"
+                        android:layout_gravity="end|center"
+                        android:gravity="end"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:max="15"
+                    android:progressDrawable="@drawable/seekbar_ruler"
+                    android:thumb="@drawable/seekbar_slider"/>
+                <TextView
+                    android:id="@+id/strSeekBar2"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/seekHint1"
+                    android:textColorHint="@color/white"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/french_fries"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/contentImage"/>
+
+                <LinearLayout
+                    android:id="@+id/linLay3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/foodMenu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/food3"
+                        android:textColor="@color/thick_butter"
+                        android:textSize="18sp"
+                        android:buttonTint="@color/calm_red"/>
+                    <TextView
+                        android:id="@+id/strFoodPrice3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodPrice3"
+                        android:layout_gravity="end|center"
+                        android:gravity="end"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:max="15"
+                    android:progressDrawable="@drawable/seekbar_ruler"
+                    android:thumb="@drawable/seekbar_slider"/>
+                <TextView
+                    android:id="@+id/strSeekBar3"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/seekHint1"
+                    android:textColorHint="@color/white"/>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay3"
+                app:counterEnabled="false">
+
+                <TextView
+                    android:id="@+id/menu_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menuTitle2"
+                    android:textColor="@color/white"
+                    android:gravity="start|top"
+                    android:layout_gravity="top"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/icecream"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/contentImage"/>
+                <LinearLayout
+                    android:id="@+id/linLay4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/drinkMenu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drink1"
+                        android:textColor="@color/thick_butter"
+                        android:textSize="18sp"
+                        android:buttonTint="@color/calm_red"/>
+                    <TextView
+                        android:id="@+id/strDrinkPrice1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drinkPrice1"
+                        android:layout_gravity="end|center"
+                        android:gravity="end"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:max="15"
+                    android:progressDrawable="@drawable/seekbar_ruler"
+                    android:thumb="@drawable/seekbar_slider"/>
+                <TextView
+                    android:id="@+id/strSeekBar4"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/seekHint1"
+                    android:textColorHint="@color/white"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:src="@drawable/flurry_oreo"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/contentImage"/>
+
+                <LinearLayout
+                    android:id="@+id/linLay5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/drinkMenu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drink2"
+                        android:textColor="@color/thick_butter"
+                        android:textSize="18sp"
+                        android:buttonTint="@color/calm_red"/>
+                    <TextView
+                        android:id="@+id/strDrinkPrice2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drinkPrice2"
+                        android:layout_gravity="end|center"
+                        android:gravity="end"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:max="15"
+                    android:progressDrawable="@drawable/seekbar_ruler"
+                    android:thumb="@drawable/seekbar_slider"/>
+                <TextView
+                    android:id="@+id/strSeekBar5"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/seekHint1"
+                    android:textColorHint="@color/white"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/fanta_float"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/contentImage"/>
+
+                <LinearLayout
+                    android:id="@+id/linLay6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/drinkMenu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drink3"
+                        android:textColor="@color/thick_butter"
+                        android:textSize="18sp"
+                        android:buttonTint="@color/calm_red"/>
+                    <TextView
+                        android:id="@+id/strDrinkPrice3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drinkPrice3"
+                        android:layout_gravity="end|center"
+                        android:gravity="end"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/seekBar6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="3dp"
+                    android:minHeight="3dp"
+                    android:max="15"
+                    android:progressDrawable="@drawable/seekbar_ruler"
+                    android:thumb="@drawable/seekbar_slider"/>
+                <TextView
+                    android:id="@+id/strSeekBar6"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/seekHint1"
+                    android:textColorHint="@color/white"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterOverflowTextColor="@color/orange"
+                app:counterTextColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay4">
+
+                <EditText
+                    android:id="@+id/ixAutoSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:hint="@string/subtotalString"
+                    android:inputType="text"
+                    android:maxLength="100"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterOverflowTextColor="@color/orange"
+                app:counterTextColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay5">
+
+                <EditText
+                    android:id="@+id/ixAutoTax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:hint="@string/tax10String"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterOverflowTextColor="@color/orange"
+                app:counterTextColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay6">
+
+                <EditText
+                    android:id="@+id/ixTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:hint="@string/totalString"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterOverflowTextColor="@color/orange"
+                app:counterTextColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay7">
+
+                <EditText
+                    android:id="@+id/ixCash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:hint="@string/cashString"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLay9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterOverflowTextColor="@color/orange"
+                app:counterTextColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/inputLay8">
+
+                <EditText
+                    android:id="@+id/ixChange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:autofillHints=""
+                    android:focusable="true"
+                    android:hint="@string/changeString"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/checkBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/checkBtn"
+                app:strokeWidth="5dp"
+                app:cornerRadius="10dp"
+                app:strokeColor="@color/calm_red"
+                android:backgroundTint="@color/heavy_gray"
+                android:textColor="@color/white"
+                android:layout_marginTop="60dp"
+                app:layout_constraintTop_toBottomOf="@id/inputLay9"
+                tools:ignore="UsingOnClickInXml" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:cornerRadius="10dp"
+                android:text="@string/submitBtn"
+                android:backgroundTint="@color/calm_red"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/checkBtn"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

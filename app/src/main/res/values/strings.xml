@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Pesan 2M</string>
+    <string name="homeTitle">Aplikasi ini khusus admin rumah makan, silahkan isikan data konsumen</string>
+    <string name="dateHint">TANGGAL-WAKTU</string>
+    <string name="AN">ATAS NAMA</string>
+    <string name="menuTitle1">MAKANAN</string>
+    <string name="menuTitle2">MINUMAN</string>
+    <string name="food1">Honey Garlic Chicken Rice</string>
+    <string name="food2">Beef Burger</string>
+    <string name="food3">Regular Fries</string>
+    <string name="drink1">Ice Cream Cone</string>
+    <string name="drink2">Flurry Oreo</string>
+    <string name="drink3">Fanta Float</string>
+    <string name="foodPrice1">IDR 35.000</string>
+    <string name="foodPrice2">IDR 30.000</string>
+    <string name="foodPrice3">IDR 25.000</string>
+    <string name="drinkPrice1">IDR 10.000</string>
+    <string name="drinkPrice2">IDR 18.000</string>
+    <string name="drinkPrice3">IDR 15.000</string>
+    <string name="seekHint1">0</string>
+    <string name="subtotalString">SUBTOTAL</string>
+    <string name="emptySubtotal">PILIH MENU</string>
+    <string name="emptyTax">BELUM ADA PAJAK</string>
+    <string name="emptyTotal">BELUM ADA TOTAL</string>
+    <string name="emptyChange">BELUM ADA KEMBALIAN</string>
+    <string name="satuan"> IDR</string>
+    <string name="contentImage">This is Menu Image</string>
+    <string name="tax10String">PAJAK 10%</string>
+    <string name="totalString">TOTAL</string>
+    <string name="cashString">DIBAYAR</string>
+    <string name="changeString">KEMBALI</string>
+    <string name="checkBtn">Cek Tagihan</string>
+    <string name="submitBtn">Pesan</string>
+
+    <string name="receiptTitle">Print Receipt</string>
+    <string name="r_address">Jl. Raya Soekarno-Hatta</string>
+    <string name="r_address2">Bandung, 4290</string>
+    <string name="r_phone">(022) 345677</string>
+    <string name="r_date">Tanggal</string>
+    <string name="r_idOrder">ID Pesanan</string>
+    <string name="r_orderer">Nama Pemesan</string>
+    <string name="r_cashier">Kasir</string>
+    <string name="r_defaultId">AB3546CK</string>
+    <string name="r_semicolon">:</string>
+    <string name="r_emptyValue">null</string>
+    <string name="r_defaultCashier">Rahma Latief</string>
+
+
+</resources>
